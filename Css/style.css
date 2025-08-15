@@ -1141,7 +1141,7 @@ img {
 @media screen and (min-width: 1024px) {
   .heder,
   .main,
-  .footer-container {
+  footer-container {
     padding: 0;
   }
 
