@@ -1,0 +1,1044 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>praveen raj</title>
+    
+    <link rel="stylesheet" href="Libraries/swiper-bundle.min.css" />
+    <link rel="icon" href="praveen 2 photo.png">
+    <link rel="stylesheet" href="Css/style.css" />
+     
+  </head> 
+  <body>
+    <!-- header  -->
+    <header class="header" id="header">
+      <nav class="nav container">
+        <a href="#" class="nav-logo">PRAVEEN RAJ S S</a>
+
+        <div class="nav-menu" id="nav-menu">
+          <ul class="nav-list grid">
+            <li class="nav-item">
+              <a href="#home" class="nav-link"
+                ><i class="fa-solid fa-house nav-icon"></i> Home</a
+              >
+            </li>
+            <li class="nav-item">
+              <a href="#about" class="nav-link"
+                ><i class="fa-solid fa-user nav-icon"></i> About</a
+              >
+            </li>
+            <li class="nav-item">
+              <a href="#skills" class="nav-link"
+                ><i class="fa-solid fa-file nav-icon"></i> skills</a
+              >
+            </li>
+            <li class="nav-item">
+              <a href="#services" class="nav-link"
+                ><i class="fa-solid fa-briefcase nav-icon"></i> Services</a
+              >
+            </li>
+            <li class="nav-item">
+              <a href="#portfolio" class="nav-link"
+                >
+                <i class="fa-solid fa-image nav-icon"></i> Projects</a
+              >
+            </li>
+            <li class="nav-item">
+              <a href="#contact" class="nav-link"
+                ><i class="fa-solid fa-message nav-icon"></i> Contact</a
+              >
+            </li>
+          </ul>
+          <i class="fa-solid fa-xmark nav-close" id="nav-close"></i>
+        </div>
+
+        <div class="nav-btns">
+
+
+
+          <!-- theme btn  -->
+          <i class="fa-regular fa-moon change-theme" id="theme-button"></i>
+
+          <div class="nav-toggle" id="nav-toggle">
+            <i class="fa-solid fa-bars"></i>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="main">
+      <section class="home section" id="home">
+        <div class="home-container container grid">
+          <div class="home-content grid">
+            <div class="home-social">
+              
+             
+<a
+  href="tel:+91 9361858386"
+  class="home-social-icon"
+  aria-label="Call Praveen"
+>
+  <i class="fa-solid fa-phone"></i>
+</a>
+
+<a
+  href="mailto:praveenrajsamaraji2005@gmail.com"
+  class="home-social-icon"
+  aria-label="Email"
+>
+  <i class="fa-solid fa-envelope"></i>
+</a>
+
+
+<a
+   href="https://www.linkedin.com/in/praveenrajanalyst?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
+   target="_blank"
+   class="home-social-icon"
+   >
+   <i class="fa-brands fa-linkedin-in"></i>
+ </a>              
+  
+
+           
+<a
+  href="https://github.com/praveenrajss25?tab=repositories"
+  target="_blank"
+  class="home-social-icon"
+  >
+  <i class="fa-brands fa-github"></i>
+</a>
+
+
+<a
+  href="https://www.instagram.com/praveenrajss2k?igsh=bTd6eDQzbno5aWYx"
+  target="_blank"
+  class="home-social-icon"
+  >
+  <i class="fa-brands fa-instagram"></i>
+</a>
+
+ </div>
+
+
+             <!--photo background model changed-->
+
+            <div class="home-img">
+              <svg
+                class="home-blob"
+                viewBox="0 0 185 223"
+                xmlns="http://www.w3.org/2000/svg"
+                xmlns:xlink="http://www.w3.org/1999/xlink"
+              >
+                
+                  <image
+                    class="home-blob-img"
+                    x="-40"
+                    y="-50"
+                    href="Assets/Icons/praveen 2 photo.png"
+                  />
+                
+              </svg>
+            </div>
+
+            <div class="home-data">
+   
+              
+<!--red running name only-->
+
+<h1 class="moving-name"></h1>
+
+<style>
+.moving-name {
+  color: rgb(255, 0, 0);
+  font-size: 1.9em;
+  font-weight: #;
+  white-space: nowrap;
+}
+</style>
+
+<script>
+const text = "Hi, I am PRAVEEN RAJ";
+const container = document.querySelector(".moving-name");
+let i = 0;
+
+function loopType() {
+  container.textContent = text.substring(0, i + 1);
+  i++;
+  if (i >= text.length) {
+    i = 7; // restart from index of "I am " → index 5 is space after "I am "
+  }
+  setTimeout(loopType,350 ); // typing speed 200 ok
+}
+
+loopType();
+</script>
+
+
+
+
+<!--finished-->
+              
+              <h3 >Data Field & Full Stack</h3>
+              
+              <p class="home-description">
+                Passionate data analyst specializing in reading and make a wonderful insigts from raw data.
+              </p>
+
+              <!--contact me button in first-->
+
+              <a href="#contact"
+               class="button button-flex">
+
+                Contact Me <i class="fa-regular fa-envelope button-icon"></i>
+              </a>
+            </div>
+          </div>
+          <div class="home-scroll">
+            <a href="#about" class="home-scroll-button button-flex">
+
+              <!-- <i class="fa-solid fa-computer-mouse home-scroll-mouse"></i> -->
+               
+              <img class="home-scroll-mouse" src="Assets/mouse.svg" alt="" />
+              <span class="home-scroll-name">Scroll down</span>
+              <i class="fa-solid fa-angles-down home-scroll-arrow"></i>
+            </a>
+          </div>
+        </div>
+      </section>
+
+
+
+
+      
+
+      <section class="about section" id="about">
+        <h2 class="section-title">About Me</h2>
+        <span class="section-subtitle">My Introduction</span>
+
+        <div class="about-container container grid">
+          <img src="Assets/Icons/aboutimg.png" alt="" class="about-img" />
+
+          <div class="about-data">
+            <p class="about-description">
+             I’m a data analyst with hands-on experience in transforming raw data into actionable insights. I’ve completed two industry internships where I worked on real-time datasets, performed data cleaning, visualization, and built dashboards to support business decisions. My skill set includes Python, SQL, Excel, Power BI, and data storytelling. I’m passionate about turning complex data into clear, impactful narratives that drive results.
+            </p>
+
+            <div class="about-info">
+              <div>
+                <span class="about-info-title">06+</span>
+                <span class="about-info-name"
+                  >Months <br />
+                  experience</span
+                >
+              </div>
+              <div>
+                <span class="about-info-title">5+</span>
+                <span class="about-info-name"
+                  >Completed <br />
+                  project</span
+                >
+              </div>
+              <div>
+                <span class="about-info-title">02+</span>
+                <span class="about-info-name"
+                  >Companies <br />
+                  worked as intern</span
+                >
+              </div>
+            </div>
+<div class="about-buttons">
+              <a
+                download="resume.pdf"
+                href="/Assets/praveenraj.pdf"
+                class="button button-flex"
+              >
+                Download Resume<i
+                  class="fa-solid fa-file-arrow-down button-icon"
+                ></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- skills and qualification  -->
+      <section class="skills section" id="skills">
+        <h2 class="section-title">Skills</h2>
+        <span class="section-subtitle">My Technical Skills</span>
+        <div class="skills-content container">
+          <div class="skills-name">Python</div>
+          <div class="skills-name"> SQL</div>
+          <div class="skills-name">Excel VBA</div>
+          <div class="skills-name">Power BI</div>
+          <div class="skills-name"> AWS (basic S3 Bucket)</div>
+          <div class="skills-name">Git</div>
+          <div class="skills-name">Github</div>
+          <div class="skills-name">SaaS</div>
+          <div class="skills-name">Web Deployment</div>
+          <div class="skills-name">Pandas</div>
+          <div class="skills-name">Numpy</div>
+          
+          <div class="skills-name">Tableau</div>
+           <div class="skills-name">HTML</div>
+          <div class="skills-name">Css</div>
+          <div class="skills-name">Photoshop</div>
+          
+         
+          
+          
+          
+          
+          
+    
+         
+            
+          
+        </div>
+      </section>
+      <section class="qualification section">
+        <h2 class="section-title">Qualification</h2>
+        <span class="section-subtitle">My journey</span>
+
+        <div class="qualification-container container">
+          <div class="qualification-tabs">
+            <div
+              class="qualification-button button-flex qualification-active"
+              data-target="#education"
+            >
+              <i class="fa-solid fa-graduation-cap qualification-icon"></i>
+              Education
+            </div>
+            <div class="qualification-button button-flex" data-target="#work">
+              <i class="fa-solid fa-briefcase qualification-icon"></i>
+              Work
+            </div>
+          </div>
+
+          <div class="qualification-section">
+            <div
+              class="qualification-content qualification-active"
+              data-content
+              id="education"
+            >
+              <!-- qualifi 1 -->
+              <div class="qualification-data">
+                <div>
+                  <h3 class="qualification-title">
+                    Computer Science in AI and ML
+                  </h3>
+                  <span class="qualification-subtitle">Vels University, chennai</span>
+                  <div class="qualification-date">
+                    <i class="fa-solid fa-calendar-days"></i>
+                    2023- 2026
+                  </div>
+                </div>
+                <div>
+                  <span class="qualification-round"></span>
+                  <span class="qualification-line"></span>
+                </div>
+              </div>
+
+              <!-- qualifi 2 -->
+
+              <div class="qualification-data">
+                <div></div>
+
+                <div>
+                  <span class="qualification-round"></span>
+                  <span class="qualification-line"></span>
+                </div>
+
+                <div>
+                  <h3 class="qualification-title">
+                    Data Analysis and Visualization with Power BI
+                  </h3>
+                  <span class="qualification-subtitle">Coursera</span>
+                  <div class="qualification-date">
+                    <i class="fa-solid fa-calendar-days"></i>
+                    7 march 2025
+                  </div>
+                </div>
+              </div>
+
+              <!-- qualifi 3 -->
+
+              <div class="qualification-data">
+                <div>
+                  <h3 class="qualification-title">Data Science & Analytics</h3>
+                  <span class="qualification-subtitle">HP LIFE</span>
+                  <div class="qualification-date">
+                    <i class="fa-solid fa-calendar-days"></i>
+                    12 Decenber2024
+                  </div>
+                </div>
+                <div>
+                  <span class="qualification-round"></span>
+                  <span class="qualification-line"></span>
+                </div>
+              </div>
+
+              <!-- qualifi 4 -->
+
+              <div class="qualification-data">
+                <div></div>
+                <div>
+                  <span class="qualification-round"></span>
+                  <!-- <span class="qualification-line"></span> -->
+                </div>
+                <div>
+                  <h3 class="qualification-title">Python for Machine Learning</h3>
+                  <span class="qualification-subtitle">Inspire</span>
+                  <div class="qualification-date">
+                    <i class="fa-solid fa-calendar-days"></i>
+                    February-march 2024
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- qualific content 2  -->
+            <div class="qualification-content" data-content id="work">
+              <!-- qualifi 1 -->
+              <div class="qualification-data">
+                <div>
+                  <h3 class="qualification-title">Data analyst Intern</h3>
+                  <span class="qualification-subtitle">Uptoskills, Delhi</span>
+                  <div class="qualification-date">
+                    <i class="fa-solid fa-calendar-days"></i>
+                    [Jan 2025 – Apr 2025]
+                  </div>
+                </div>
+                <div>
+                  <span class="qualification-round"></span>
+                  <span class="qualification-line"></span>
+                </div>
+              </div>
+
+              <!-- qualifi 2 -->
+
+              <div class="qualification-data">
+                <div></div>
+
+                <div>
+                  <span class="qualification-round"></span>
+                  <span class="qualification-line"></span>
+                </div>
+
+                <div>
+                  <h3 class="qualification-title">Data analyst Intern</h3>
+                  <span class="qualification-subtitle">Vcodesz, Chennai</span>
+                  <div class="qualification-date">
+                    <i class="fa-solid fa-calendar-days"></i>
+                    2025 - Present
+                  </div>
+                </div>
+              </div>
+
+              <!-- qualifi 3 -->
+
+              <div class="qualification-data">
+                <div>
+                  <h3 class="qualification-title"> Career Guidance</h3>
+                  <span class="qualification-subtitle"> Students</span>
+                  <div class="qualification-date">
+                    <!--i class="fa-solid fa-calendar-days"></i>
+                    2019 - Present-->
+                  </div>
+                </div>
+                <div>
+                  <span class="qualification-round"></span>
+                  <!-- <span class="qualification-line"></span> -->
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="services section" id="services">
+        <h2 class="section-title">Services</h2>
+        <span class="section-subtitle">What I offer</span>
+
+        <div class="services-container container grid">
+
+
+
+
+
+
+
+
+
+
+          <!-- service 1  -->
+          <div class="services-content">
+            <div>
+              <i class="fa-solid fa-code services-icon"></i>
+
+              <h3 class="services-title">
+                Data Analyst <br />
+                
+              </h3>
+            </div>
+            <span
+              class="button button-flex button-small button-link services-button"
+            >
+              View more
+              <i class="fa-solid fa-arrow-right button-icon"></i>
+            </span>
+
+            <div class="services-box">
+              <div class="services-box-content">
+                <h4 class="services-box-title">
+                  Data Analyst <br />
+                  
+                </h4>
+                <i class="fa-solid fa-xmark services-box-close"></i>
+
+                <ul class="services-box-services grid">
+                  <li class="services-box-list">
+                    <i
+                      class="fa-regular fa-circle-check services-list-icon"
+                    ></i>
+                    <p>Data Analysis & Interpretation</p>
+                  </li>
+                  <li class="services-box-list">
+                    <i
+                      class="fa-regular fa-circle-check services-list-icon"
+                    ></i>
+                    <p> SQL, Python,Excel</p>
+                  </li>
+                  <li class="services-box-list">
+                    <i
+                      class="fa-regular fa-circle-check services-list-icon"
+                    ></i>
+                    <p> Dashboarding (Tableau, Power BI, Looker)</p>
+                  </li>
+                  <li class="services-box-list">
+                    <i
+                      class="fa-regular fa-circle-check services-list-icon"
+                    ></i>
+                    <p> Predictive Analytics & Machine Learning(Beginner)</p>
+                    
+
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <!-- service 2  -->
+          <div class="services-content">
+            <div>
+              <i class="fa-brands fa-uikit services-icon"></i>
+              <h3 class="services-title">
+                Ui/Ux <br />
+                Designer
+              </h3>
+            </div>
+            <span
+              class="button button-flex button-small button-link services-button"
+            >
+              View more
+              <i class="fa-solid fa-arrow-right button-icon"></i>
+            </span>
+
+            <div class="services-box">
+              <div class="services-box-content">
+                <h4 class="services-box-title">
+                  Ui/Ux <br />
+                  Designer
+                </h4>
+                <i class="fa-solid fa-xmark services-box-close"></i>
+
+                <ul class="services-box-services grid">
+                  <li class="services-box-list">
+                    <i
+                      class="fa-regular fa-circle-check services-list-icon"
+                    ></i>
+                    <p>Intuitive User Interface Design</p>
+                  </li>
+                  <li class="services-box-list">
+                    <i
+                      class="fa-regular fa-circle-check services-list-icon"
+                    ></i>
+                    <p>Responsive and Mobile-First Design</p>
+                  </li>
+                  <li class="services-box-list">
+                    <i
+                      class="fa-regular fa-circle-check services-list-icon"
+                    ></i>
+                    <p>Seamless User Experience Optimization</p>
+                  </li>
+                  <li class="services-box-list">
+                    <i
+                      class="fa-regular fa-circle-check services-list-icon"
+                    ></i>
+                    <p>Accessibility and Usability Enhancements</p>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <!-- service 3  -->
+          <div class="services-content">
+            <div>
+              <i class="fa-solid fa-hashtag services-icon"></i>
+              <h3 class="services-title">
+                Frontend Developer<br />
+                
+              </h3>
+            </div>
+            <span
+              class="button button-flex button-small button-link services-button"
+            >
+              View more
+              <i class="fa-solid fa-arrow-right button-icon"></i>
+            </span>
+
+            <div class="services-box">
+              <div class="services-box-content">
+                <h4 class="services-box-title">
+                  Frontend Developer<br />
+                  
+                </h4>
+                <i class="fa-solid fa-xmark services-box-close"></i>
+
+                <ul class="services-box-services grid">
+                  <li class="services-box-list">
+                    <i
+                      class="fa-regular fa-circle-check services-list-icon"
+                    ></i>
+                    <p>Responsive Web Design</p>
+                  </li>
+                  <li class="services-box-list">
+                    <i
+                      class="fa-regular fa-circle-check services-list-icon"
+                    ></i>
+                    <p>Interactive User Interfaces</p>
+                  </li>
+                  <li class="services-box-list">
+                    <i
+                      class="fa-regular fa-circle-check services-list-icon"
+                    ></i>
+                    <p>Content Strategy Consulting</p>
+                  </li>
+                  <li class="services-box-list">
+                    <i
+                      class="fa-regular fa-circle-check services-list-icon"
+                    ></i>
+                    <p>Brand Development and Growth</p>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+
+
+
+
+
+    
+
+
+
+
+
+
+
+
+
+              <!-- portfolio -->
+      <section class="portfolio section" id="portfolio">
+        <h2 class="section-title">Projects</h2>
+        <span class="section-subtitle">Most recent work</span>
+
+        <div class="portfolio-container container swiper-container">
+          <div class="swiper-wrapper">
+
+
+            <!-- project1  -->
+            <div class="portfolio-content grid swiper-slide">
+              <img src="Assets/project1.svg" alt="" class="portfolio-img" />
+
+              <div class="portfolio-data">
+                <h3 class="portfolio-title">Zepto Monthly sales dashboard</h3>
+                <p class="portfolio-description">
+                 "Interactive monthly sales dashboard that provides real-time insights to 
+                 optimize business performance and drive data-driven decisions."
+                </p>
+                <a
+                  href="https://github.com/praveenrajss25/zeptodashboard.git"
+                  target="_blank"
+                  class="button button-flex button-small portfolio-button"
+                  >Project Link
+                  <i class="fa-solid fa-arrow-right button-icon"></i
+                ></a>
+              </div>
+            </div>
+
+
+
+            <!-- project2  -->
+            <div class="portfolio-content grid swiper-slide">
+              <img src="Assets/project2.svg" alt="" class="portfolio-img" />
+
+              <div class="portfolio-data">
+                <h3 class="portfolio-title">Portfolio Websites</h3>
+                <p class="portfolio-description">
+                  Impressive portfolio sites that showcase your talents with a
+                  flawless user experience.
+                </p>
+                <a
+                  href="#"
+                  target="_blank"
+                  class="button button-flex button-small portfolio-button"
+                  >Project Link
+                  <i class="fa-solid fa-arrow-right button-icon"></i
+                ></a>
+              </div>
+            </div>
+
+            <!-- project3  -->
+            <div class="portfolio-content grid swiper-slide">
+              <img src="Assets/project3.svg" alt="" class="portfolio-img" />
+
+              <div class="portfolio-data">
+                <h3 class="portfolio-title">Frontend project</h3>
+                <p class="portfolio-description">
+                  A clean and simple web page where students can browse, search, and download 
+                  notes and books categorized by subjects or topics (implement stage)
+                </p>
+                <a
+                  href="https://praveenrajss25.github.io/websitefrontend/"
+                  target="_blank"
+                  class="button button-flex button-small portfolio-button"
+                  >Project Link
+                  <i class="fa-solid fa-arrow-right button-icon"></i
+                ></a>
+              </div>
+            </div>
+
+
+            <!-- project4 -->
+            <div class="portfolio-content grid swiper-slide">
+              <img src="Assets/project4.svg" alt="" class="portfolio-img" />
+
+              <div class="portfolio-data">
+                <h3 class="portfolio-title">Frontend project</h3>
+                <p class="portfolio-description">
+                  A clean and simple web page where students can browse, search, and download 
+                  notes and books categorized by subjects or topics (implement stage)
+                </p>
+                <a
+                  href="https://leavemanagementsystemanalytics.netlify.app"
+                  target="_blank"
+                  class="button button-flex button-small portfolio-button"
+                  >Project Link
+                  <i class="fa-solid fa-arrow-right button-icon"></i
+                ></a>
+              </div>
+            </div>
+
+
+            <!-- project5  -->
+            <div class="portfolio-content grid swiper-slide">
+              <img src="Assets/project5.svg" alt="" class="portfolio-img" />
+
+              <div class="portfolio-data">
+                <h3 class="portfolio-title">Business Tracking web application</h3>
+                <p class="portfolio-description">
+                 "This is a group project developed by four people and is currently in progress.
+                  We are working hard to release it as soon as possible."
+                </p>
+                <a
+                  
+                  target="_blank"
+                  class="button button-flex button-small portfolio-button"
+                  >in progress( Please come back again later. Thank you!)
+                  <i class="fa-solid fa-arrow-right button-icon"></i
+                ></a>
+              </div>
+            </div>
+          </div>
+
+          
+          <div class="swiper-angles">
+            <div class="swiper-button-next">
+              <i class="fa-solid fa-angle-right swiper-icon"></i>
+            </div>
+            <div class="swiper-button-prev">
+              <i class="fa-solid fa-angle-left swiper-icon"></i>
+            </div>
+          </div>
+          <div class="swiper-pagination"></div>
+        </div> 
+      </section>
+
+
+<!-- do u have a new project -->
+      <section class="project-contact section">
+        <div class="project-bg">
+          <div class="project-container container grid">
+            <div class="project-data">
+              <h2 class="project-title">Do you have a new project / job openings ?</h2>
+              <p class="project-description">
+                "Contact me now to hire me."
+              </p>
+              <a href="tel:+91 9361858386" class="button button-flex button-white"
+                >Contact Me Phone/Whatsapp
+                <i
+                  class="fa-regular fa-comment-dots project-icon button-icon"
+                ></i>
+              </a>
+            </div>
+            <img src="Assets/Icons/contactme.png" alt="" class="project-img" />
+          </div>
+        </div>
+      </section>
+
+
+
+
+
+
+
+      <!-- testimonial -->
+      <section class="testimonial section">
+        <h2 class="section-title"> Feedback</h2>
+        <span class="section-subtitle">Of my work and projects </span>
+
+        <div class="testimonial-container container swiper-container">
+          <div class="swiper-wrapper">
+            <!-- testimonial 1  -->
+            <div class="testimonial-content swiper-slide">
+              <div class="testimonial-data">
+                <div class="testimonial-header">
+                  <img
+                    src="Assets/Icons/reviewer1.png"
+                    alt=""
+                    class="testimonial-img"
+                  />
+
+                  <div>
+                    <h3 class="testimonial-name">Saanj Tamboli</h3>
+                    <span class="testimonial-client">Team leader - Uptoskills</span>
+                  </div>
+                </div>
+
+                <div>
+                  <i class="fa-regular fa-star testimonial-icon"></i>
+                  <i class="fa-regular fa-star testimonial-icon"></i>
+                  <i class="fa-regular fa-star testimonial-icon"></i>
+                  <i class="fa-regular fa-star testimonial-icon"></i>
+                  <i class="fa-regular fa-star testimonial-icon"></i>
+                </div>
+              </div>
+              <p class="testimonial-description">
+               "The analysis you delivered to the company is a testament to your 
+               analytical skills and attention to detail. Every insight reflects your commitment to accuracy and 
+               impactful decision-making. Keep up the great work!"
+              </p>
+            </div>
+       
+            <!-- testimonial  2-->
+            <div class="testimonial-content swiper-slide">
+              <div class="testimonial-data">
+                <div class="testimonial-header">
+                  <img
+                    src="Assets/Icons/reviewer2.png"
+                    alt=""
+                    class="testimonial-img"
+                  />
+
+                  <div>
+                    <h3 class="testimonial-name">Radha priyadarshini</h3>
+                    <span class="testimonial-client">HR-TAE ,VCODESZ</span>
+                  </div>
+                </div>
+
+                <div>
+                  <i class="fa-regular fa-star testimonial-icon"></i>
+                  <i class="fa-regular fa-star testimonial-icon"></i>
+                  <i class="fa-regular fa-star testimonial-icon"></i>
+                  <i class="fa-regular fa-star testimonial-icon"></i>
+                  <i class="fa-regular fa-star testimonial-icon"></i>
+                </div>
+              </div>
+              <p class="testimonial-description">
+                "We are incredibly proud of Praveen Raj S S for his outstanding contributions
+                 in the data analytics field. His ability to transform complex datasets into actionable insights has greatly supported our strategic decisions. Praveen’s dedication, precision, and
+                 problem-solving mindset truly set him apart.
+            </div>
+          </div>
+
+          <div class="swiper-pagination swiper-pagination-testimonial"></div>
+        </div>
+      </section>
+      
+      
+            
+           
+<!-- contact me down  -->
+      <section class="contact section" id="contact">
+  <h2 class="section-title">Contact Me</h2>
+  <span class="section-subtitle">Get in touch</span>
+  <div class="contact-container container grid">
+    <!-- Contact Info -->
+    <div>
+      <div class="contact-info">
+        <span class="contact-icon">
+          <!-- Phone SVG Icon (Font Awesome or Inline) -->
+          <i class="fas fa-phone-alt"></i>
+        </span>
+        <div>
+          <h3 class="contact-title">
+            <a href="tel:+91 9361858386">Call</a></h3>
+          <span class="contact-subtitle">+91-9361858386</span>
+          
+        </div>
+      </div>
+      <div class="contact-info">
+        <span class="contact-icon">
+          <!-- Email SVG Icon -->
+          <i class="fas fa-envelope"></i>
+        </span>
+        <div>
+          <h3 class="contact-title"><a href="tel:+91 9361858386">Email</a></h3></h3>
+          <span class="contact-subtitle">praveenrajsamaraji2005@gmail.com</span>
+        </div>
+      </div>
+    </div>
+    <!-- Contact Form -->
+    <form class="contact-form grid">
+      <div class="contact-inputs grid">
+        <input type="text" name="name" class="contact-input" placeholder="Name *">
+        <input type="email" name="email" class="contact-input" placeholder="Email *">
+        <input type="phone" name="phone" class="contact-input" placeholder="phone no *">
+        <input type="location" name="Message" class="contact-input" placeholder="location">
+      </div>
+      <textarea name="message" rows="3" class="contact-input" placeholder="Message"></textarea>
+
+</form>
+
+      <!-- Submit Button -->
+
+      <form action="Send Message" method="post">
+  <label>
+
+   <center> <input type="checkbox" name="subscribe" style="accent-color: blue;" required>
+  I agree to the above information.
+    </center>
+
+  </label>
+ 
+</form>
+
+<!-- Submit Button msg -->
+
+ <button type="submit" class="button">Send Message</button>
+      
+    </form>
+  </div>
+</secti
+
+
+
+
+
+
+
+
+      <!-- footer  -->
+      <footer class="footer">
+        <div class="footer-bg">
+          <div class="footer-container container grid">
+            <div>
+              <h1 class="footer-title">Praveen raj SS</h1>
+              <span class="footer-subtitle">Data Analyst</span>
+            </div>
+            <ul class="footer-links">
+              <li>
+                <a href="#services" class="footer-link">Services</a>
+              </li>
+              <li>
+                <a href="#portfolio" class="footer-link">Projects</a>
+              </li>
+              <li>
+                <a href="#contact" class="footer-link">Contact</a>
+              </li>
+            </ul>
+
+            <div class="footer-socials">
+
+              <a href="tel:+91 9361858386" target="_blank" class="footer-social">
+                 <i class="fa-solid fa-phone"></i>
+              </a>
+
+              <a
+                href="https://www.linkedin.com/in/praveenrajanalyst?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
+                target="_blank"
+                class="footer-social"
+              >
+                <i class="fa-brands fa-linkedin-in"></i>
+              </a>
+              <a
+                href="https://github.com/praveenrajss25?tab=repositories"
+                target="_blank"
+                target="_blank"
+                class="footer-social"
+              >
+                <i class="fa-brands fa-github"></i>
+              </a>
+              <a
+                href="https://www.instagram.com/praveenrajss2k?igsh=bTd6eDQzbno5aWYx"
+                target="_blank"
+                class="footer-social"
+              >
+                <i class="fa-brands fa-instagram"></i>
+              </a>
+            </div>
+          </div>
+          <p class="footer-copy">© 2025 By praveen raj - praveen raj Dev.</p>
+           
+
+         
+          
+        </div>
+      </footer>
+    </main>
+
+    <a href="#home" class="scrollup" id="scroll-up">
+      <i class="fa-solid fa-arrow-up scroll-up-icon"></i>
+    </a>
+    <script src="Libraries/swiper-bundle.min.js"></script>
+    <script
+      src="https://kit.fontawesome.com/9b634c15bd.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="script.js"></script>
+
+    <!-- time showing code-->
+
+<center>
+  <span id="time"></span>
+
+  <script>
+    setInterval(() => {
+      const now = new Date();
+      const options = { 
+        weekday: 'long', year: 'numeric', month: 'long', 
+        day: 'numeric', hour: '2-digit', minute: '2-digit', second: '2-digit', 
+        hour12: true
+      };
+      document.getElementById('time').textContent = now.toLocaleString(undefined, options);
+    }, 1000);
+  </script>
+</center>
+
+
+  </body>
+</html>
