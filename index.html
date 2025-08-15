@@ -912,38 +912,114 @@ loopType();
         </div>
       </div>
     </div>
-    <!-- Contact Form -->
-    <form class="contact-form grid">
-      <div class="contact-inputs grid">
-        <input type="text" name="name" class="contact-input" placeholder="Name *">
-        <input type="email" name="email" class="contact-input" placeholder="Email *">
-        <input type="phone" name="phone" class="contact-input" placeholder="phone no *">
-        <input type="location" name="Message" class="contact-input" placeholder="location">
-      </div>
-      <textarea name="message" rows="3" class="contact-input" placeholder="Message"></textarea>
-
-</form>
-
-      <!-- Submit Button -->
-
-      <form action="Send Message" method="post">
-  <label>
-
-   <center> <input type="checkbox" name="subscribe" style="accent-color: blue;" required>
-  I agree to the above information.
-    </center>
-
-  </label>
- 
-</form>
-
-<!-- Submit Button msg -->
-
- <button type="submit" class="button">Send Message</button>
-      
-    </form>
+  <!-- Contact Form -->
+<form class="contact-form grid" onsubmit="showPopup(event)">
+  <div class="contact-inputs grid">
+    <input type="text" name="name" class="contact-input" placeholder="Name *" required>
+    <input type="email" name="email" class="contact-input" placeholder="Email *" required>
+    <input type="tel" name="phone" class="contact-input" placeholder="Phone no *" required>
+    <input type="text" name="location" class="contact-input" placeholder="Location">
   </div>
-</secti
+
+  <textarea name="message" rows="3" class="contact-input" placeholder="Message"></textarea>
+
+  <center>
+    <label>
+      <input type="checkbox" name="subscribe" style="accent-color: blue;" required>
+      I agree to the above information.
+    </label>
+  </center>
+
+  <!-- Submit Button -->
+  <button type="submit" class="button">Send Message</button>
+</form>
+
+<!-- Success Popup -->
+<div id="successPopup" class="popup">
+  <div class="popup-content">
+    <div class="checkmark">
+      <svg viewBox="0 0 52 52">
+        <circle class="checkmark-circle" cx="26" cy="26" r="25" fill="none"/>
+        <path class="checkmark-check" fill="none" d="M14 27l7 7 16-16"/>
+      </svg>
+    </div>
+    <p>Your form is submitted.<br>We will respond to you as soon as possible.</p>
+  </div>
+</div>
+
+<!-- Styles -->
+<style>
+  .popup {
+    display: none;
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+  }
+  .popup-content {
+    background: white;
+    padding: 20px 30px;
+    border-radius: 15px;
+    text-align: center;
+    animation: fadeIn 0.3s ease;
+  }
+  .checkmark {
+    width: 80px;
+    height: 80px;
+    margin: auto;
+  }
+  .checkmark-circle {
+    stroke: #4CAF50;
+    stroke-width: 2;
+    stroke-miterlimit: 10;
+    animation: stroke 0.6s ease-in-out forwards;
+  }
+  .checkmark-check {
+    stroke: #4CAF50;
+    stroke-width: 3;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-miterlimit: 10;
+    stroke-dasharray: 48;
+    stroke-dashoffset: 48;
+    animation: stroke 0.4s ease-in-out 0.6s forwards;
+  }
+  @keyframes stroke {
+    100% { stroke-dashoffset: 0; }
+  }
+  @keyframes fadeIn {
+    from { opacity: 0; transform: scale(0.8); }
+    to { opacity: 1; transform: scale(1); }
+  }
+</style>
+
+<!-- GPay-like sound -->
+<audio id="successSound">
+  <source src="https://assets.mixkit.co/sfx/preview/mixkit-confirmation-tone-2867.mp3" type="audio/mpeg">
+</audio>
+
+<!-- JavaScript -->
+<script>
+  function showPopup(event) {
+    event.preventDefault();
+
+    // Play success sound
+    document.getElementById("successSound").play();
+
+    // Show popup
+    document.getElementById("successPopup").style.display = "flex";
+
+    // Hide popup after 5 seconds
+    setTimeout(() => {
+      document.getElementById("successPopup").style.display = "none";
+      event.target.submit(); // Submit form after showing popup
+    }, 3000);
+  }
+</script>
+
+
 
 
 
