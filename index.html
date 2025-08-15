@@ -971,7 +971,7 @@ loopType();
     margin: auto;
   }
   .checkmark-circle {
-    stroke: #4CAF50;
+    stroke:red;
     stroke-width: 2;
     stroke-miterlimit: 10;
     animation: stroke 0.6s ease-in-out forwards;
@@ -997,7 +997,7 @@ loopType();
 
 <!-- GPay-like sound -->
 <audio id="successSound">
-  <source src="https://assets.mixkit.co/sfx/preview/mixkit-confirmation-tone-2867.mp3" type="audio/mpeg">
+  <source src="sound.wav" type="audio/mpeg">
 </audio>
 
 <!-- JavaScript -->
@@ -1011,7 +1011,7 @@ loopType();
     // Show popup
     document.getElementById("successPopup").style.display = "flex";
 
-    // Hide popup after 5 seconds
+    // Hide popup after 15 seconds
     setTimeout(() => {
       document.getElementById("successPopup").style.display = "none";
       event.target.submit(); // Submit form after showing popup
