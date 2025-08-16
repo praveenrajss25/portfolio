@@ -913,7 +913,11 @@ loopType();
       </div>
     </div>
   <!-- Contact Form -->
-<form class="contact-form grid" onsubmit="showPopup(event)">
+<form 
+
+     action="https://script.google.com/macros/s/AKfycbxZNQqan_Jq8QV9PjWa-J6vxiYmEsOiTwmbeALzw_eqiOE6HH5V-p5aDkyx1eWxYH_N/exec" method="POST"
+    
+   class="contact-form grid" onsubmit="showPopup(event)">
   <div class="contact-inputs grid">
     <input type="text" name="name" class="contact-input" placeholder="Name *" required>
     <input type="email" name="email" class="contact-input" placeholder="Email *" required>
@@ -1015,7 +1019,7 @@ loopType();
     setTimeout(() => {
       document.getElementById("successPopup").style.display = "none";
       event.target.submit(); // Submit form after showing popup
-    }, 10000);
+    }, 3000);
   }
 </script>
 
