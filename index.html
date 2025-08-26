@@ -59,7 +59,7 @@
                             <i class='bx bx-briefcase-alt-2'></i>
                         </a>
                     </li>
-
+                
                     <li class="nav__item">
                         <a href="#contact" class="nav__link">
                             <i class='bx bx-message-square-dots'></i>
@@ -264,7 +264,7 @@
                         </div><!--this  helps to separate the column -->
                     </div>
                 </div>
-<!--finish of above code--> -->
+<!--finish of above code--> 
                 <div class="skills__content">
                     <h3 class="skills__title"><!--Backend Development-->Tools</h3>
 
@@ -454,7 +454,7 @@
                                         Create modern 3-D experiences.
                                     </p>
                                 </li>
-                            </ul>-->
+                            </ul>
                         </div>
                     </div>
                 </div>
@@ -578,28 +578,30 @@
         </section>
 
         <!--=============== WORK ===============-->
-<!-- not need       <section class="work section" id="work">
+      <section class="work section" id="work">
             <span class="section__subtitle">My Portfolio</span>
             <h2 class="section__title">Recent Works</h2>
-
+<!--
             <div class="work__filters">
                <span class="work__item active-work" data-filter='all'>All</span>
                 <span class=" work__item" data-filter='.web'>Web</span>
                 <span class=" work__item" data-filter='.movil'>Movil</span>
                 <span class=" work__item" data-filter='.design'>Design</span>
             </div>
+-->
 
             <div class="work__container container grid">
                 <div class="work__card mix web">
                     <img src="assets/img/work1.jpg" alt="" class="work__img">
 
-                    <h3 class="work__title">Web Design</h3>
+                    <h3 class="work__title">ON going project</h3>
 
-                    <a href="#" class="work__button">
+<!--                    <a href="#" class="work__button">
                         Demo <i class='bx bx-right-arrow work__icon'></i>
                     </a>
                 </div>
-
+-->
+<!-- 
                 <div class="work__card mix movil">
                     <img src="assets/img/work2.jpg" alt="" class="work__img">
 
@@ -609,8 +611,8 @@
                         Demo <i class='bx bx-right-arrow work__icon'></i>
                     </a>
                 </div>
-
-                <div class="work__card mix design">
+            -->
+            <!--    <div class="work__card mix design">
                     <img src="assets/img/work3.jpg" alt="" class="work__img">
 
                     <h3 class="work__title">Brand Design</h3>
@@ -629,8 +631,9 @@
                         Demo <i class='bx bx-right-arrow work__icon'></i>
                     </a>
                 </div>
+            -->
 
-                <div class="work__card mix movil">
+            <!--   <div class="work__card mix movil">
                     <img src="assets/img/work5.jpg" alt="" class="work__img">
 
                     <h3 class="work__title">App Movil</h3>
@@ -640,9 +643,9 @@
                     </a>
                 </div>
 
-            </div>
+            </div>--> 
         </section>
--->
+
 
         <!--=============== TESTIMONIALS ===============
         <section class="testimonial section">
@@ -696,7 +699,7 @@ not needed -->
                 <div class="contact__content">
                     <h3 class="contact__title contact__title-info">Talk to me</h3>
 
-    <!--  not need     <div class="contact__info">
+       <div class="contact__info">
                         <div class="contact__card">
                             <i class='bx bx-mail-send contact__card-icon'></i>
                             <h3 class="contact__card-title">Email</h3>
@@ -717,7 +720,7 @@ not needed -->
                                 Write Me <i class='bx bx-right-arrow contact__button-icon'></i>
                             </a>
                         </div>
-
+<!--
                         <div class="contact__card">
                             <i class='bx bxl-twitter contact__card-icon'></i>
                             <h3 class="contact__card-title">Twitter</h3>
@@ -727,48 +730,57 @@ not needed -->
                                 Write Me <i class='bx bx-right-arrow contact__button-icon'></i>
                             </a>
                         </div>
+-->
                     </div>
                 </div>
--->
+
                 <div class="contact__content">
                     <h3 class="contact__title contact__title-form">Write Me your Message</h3>
 
-<!--***-->           <form action=""
-                     class="contact__form">
+<!--***-->           
+<form action="" class="contact__form">
 
-                     <!--not need
-                        <div class="contact__form-div">
-                            <label for="" class="contact__form-tag">Name</label>
-                            <input type="text" placeholder="Enter name" class="contact__form-input">
-                        </div>
+    <!--    
+    <div class="contact__form-div">
+        <label for="name" class="contact__form-tag">Name</label>
+        <input type="text" id="name" name="name" placeholder="Enter name" class="contact__form-input" required>
+    </div>
 
-                        <div class="contact__form-div">
-                            <label for="" class="contact__form-tag">Mail</label>
-                            <input type="text" placeholder="Enter email" class="contact__form-input">
-                        </div>
--->                
-                        <div class="contact__form-div">
-                            <label for="" class="contact__form-tag">phone number</label>
-                            <input type="tel" placeholder="note : if you enter already plz avoid it" class="contact__form-input">
-                        </div>
+    <div class="contact__form-div">
+        <label for="email" class="contact__form-tag">Mail</label>
+        <input type="email" id="email" name="email" placeholder="Enter email" class="contact__form-input" required>
+    </div>
+    -->
 
+    <div class="contact__form-div">
+        <label for="phone" class="contact__form-tag">phone number</label>
+        <input type="tel" id="phone" name="phone" placeholder="note : if you enter already plz avoid it" class="contact__form-input" required>
+    </div>
 
-                        <div class="contact__form-div contact__form-area">
-                            <label for="" class="contact__form-tag">Message</label>
-                            <textarea name="message" id="message" cols="3" rows="3" placeholder="Write your Message"
-                                class="contact__form-input "></textarea>
-                        </div>
+    
 
+    <div class="contact__form-div contact__form-area">
+        <label for="message" class="contact__form-tag">Message</label>
+        <textarea name="message" id="message" cols="30" rows="3" placeholder="Write your Message"
+            class="contact__form-input" required></textarea>
+    </div>
+<!-- ✅ Checkbox before message box -->
+    <div class="contact__form-div">
+        <label>
+            <input type="checkbox" id="consent" name="consent" required>
+            I agree to above information
+        </label>
+    </div>
+    
+    <button class="button">
+        Send Message
+    </button>
+</form>
 
-                        <button class="button">
-                            Send Message
-                        </button>
-                    </form>
+</div>
+</section>
+</main>
 
-                </div>
-
-        </section>
-    </main>
 
     <!--=============== FOOTER ===============-->
     <footer class="footer">
