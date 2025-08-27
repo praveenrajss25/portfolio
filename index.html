@@ -1109,9 +1109,8 @@ setInterval(showQuote, 15000); // update every 15s
                     <h3 class="contact__title contact__title-form">Write Me your Message</h3>
 
 <!--*** contact form -->           
-<form action="" class="contact__form">
-
-    <div class="contact__form-div">
+<form action="https://script.google.com/macros/s/AKfycbwat1fZSs2ifn33pPhzassdhJNQi-FI2vtwBqldn-dWZHdFc9D_YJGWvXP67j5q59OP/exec" method="post">
+       <div class="contact__form-div">
         <label for="name" class="contact__form-tag">Name</label>
         <input type="text" id="name" name="name" placeholder="Enter name" class="contact__form-input" required>
     </div>
@@ -1145,62 +1144,8 @@ setInterval(showQuote, 15000); // update every 15s
 </div>
 </section>
 </main>
-<!--sound occuring code-->
-<script>
-document.addEventListener('DOMContentLoaded', () => {
-  const form = document.querySelector('.contact__form');
-  if (!form) return;
 
-  // Make sure your file path is correct.
-  const audio = new Audio('sound.mp4');
-  audio.preload = 'auto';
 
-  form.addEventListener('submit', function (e) {
-    // Stop default so we can control when the form actually submits
-    e.preventDefault();
-
-    // If form invalid, show browser validation messages and don't play
-    if (!form.checkValidity()) {
-      form.reportValidity();
-      return;
-    }
-
-    // Reset to start and try to play
-    audio.currentTime = 0;
-    const playPromise = audio.play();
-
-    // If play() returns a promise, use it
-    if (playPromise !== undefined) {
-      playPromise.then(() => {
-        // When playback finishes, submit the form
-        audio.addEventListener('ended', () => {
-          form.submit();
-        }, { once: true });
-
-        // Fallback: if duration isn't available, submit after a short delay so user isn't stuck
-        const fallbackDelay = (audio.duration && !isNaN(audio.duration)) ? (audio.duration * 1000 + 300) : 2000;
-        const fallbackTimer = setTimeout(() => {
-          // Prevent double-submit
-          if (!form._submitted) {
-            form._submitted = true;
-            form.submit();
-          }
-        }, Math.max(fallbackDelay, 500));
-
-        audio.addEventListener('ended', () => clearTimeout(fallbackTimer), { once: true });
-
-      }).catch(err => {
-        // Play failed (file not found, autoplay blocked, etc.) — just submit
-        console.warn('Audio play failed — submitting form. Error:', err);
-        form.submit();
-      });
-    } else {
-      // Very old browsers: just submit
-      form.submit();
-    }
-  });
-});
-</script>
 
 
 <!--over of contact form-->
@@ -1312,7 +1257,7 @@ document.addEventListener('DOMContentLoaded', () => {
     <script src="assets/js/main.js"></script>
 
 
-    
+
 </body>
 
 </html>
