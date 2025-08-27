@@ -38,7 +38,7 @@
 <header class="header" id="header">
   <nav class="nav container">
     <!-- your logo / name -->
-    <a href="#" class="nav__logo">praveen raj SS</a>
+    <a href="#" class="nav__logo">praveen raj</a>
 
     <!-- scrolling quotes ticker (independent) -->
     <div class="a">
@@ -61,20 +61,19 @@
   font-size: 16px;
   font-weight: 600;
   white-space: nowrap;
-  animation: moveRight 15s linear infinite;
+  animation: moveLeft 15s linear infinite;
 }
 
-/* left → right movement */
-@keyframes moveRight {
-  0%   { transform: translateX(-100%); }
-  100% { transform: translateX(100%); }
+/* right → left movement */
+@keyframes moveLeft {
+  0%   { transform: translateX(100%); }
+  100% { transform: translateX(-100%); }
 }
 </style>
 
 <script>
 const quotes = [
-"“Don't Afraid to words just Analyse it.” —praveen raj",
-  "“Believe you can and you're halfway there.” — Theodore Roosevelt",
+  "“Don't Afraid to words just analyse it.” — Praveen raj",
   "“Act as if what you do makes a difference. It does.” — William James",
   "“Don’t watch the clock; do what it does. Keep going.” — Sam Levenson",
   "“Success is not final, failure is not fatal: It is the courage to continue that counts.” — Winston Churchill",
@@ -100,10 +99,9 @@ function showQuote() {
   index = (index + 1) % quotes.length;
 }
 
-showQuote();              // first quote
+showQuote();                 // show first quote
 setInterval(showQuote, 15000); // update every 15s
 </script>
-</a>
 
 
   </body>
@@ -1189,9 +1187,26 @@ not needed -->
                     </a>
                 </li>
             </ul>
+<!-- time showing code--> 
 
-            <span class="footer__copy">
-                <p>© 2025 Praveen Raj. All rights reserved.</p>
+    <center>
+  <span id="time"></span>
+
+  <script>
+    setInterval(() => {
+      const now = new Date();
+      const options = { 
+        weekday: 'long', year: 'numeric', month: 'long', 
+        day: 'numeric', hour: '2-digit', minute: '2-digit', second: '2-digit', 
+        hour12: true
+      };
+      document.getElementById('time').textContent = now.toLocaleString(undefined, options);
+    }, 1000);
+  </script>
+</center>
+            
+ <!--this is space-->               <li class="footer__social-item">
+        <center>        <p>© 2025 Praveen Raj. All rights reserved.</p></center>
 
                 
     <!-- time showing code--> 
@@ -1212,7 +1227,7 @@ not needed -->
   </script>
 </center>
 
-                      developing stage
+                    
  
             </span>
         </div>
