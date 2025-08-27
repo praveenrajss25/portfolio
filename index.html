@@ -411,7 +411,265 @@
                     
                 </div><!--this  helps to separate the column -->
         </section>
+        <!--=============== QUALIFICATIONS ===============-->
+        <section class="qualification section" id="qualification">
+            <span class="section__subtitle">My Journey</span>
+            <h2 class="section__title">Qualifications</h2>
 
+            <div class="qualification__container container">
+                <div class="qualification__tabs">
+                    <div class="qualification__button button--flex qualification__active" data-target="#education">
+                        <i class='bx bxs-graduation qualification__icon'></i>
+                        Education
+                    </div>
+
+                    <div class="qualification__button button--flex" data-target="#work">
+                        <i class='bx bx-briefcase-alt qualification__icon'></i>
+                        Work
+                    </div>
+                </div>
+
+                <div class="qualification__sections">
+                    <!-- Education Qualification -->
+                    <div class="qualification__content qualification__active" data-content id="education">
+                        <!-- Qualification 1 -->
+                        <div class="qualification__data">
+                            <div>
+                                <h3 class="qualification__title">B.Tech Information Technology</h3>
+                                <span class="qualification__subtitle">Kongu Engineering College</span>
+                                <div class="qualification__calendar">
+                                    <i class='bx bx-calendar'></i>
+                                    2022 - 2026
+                                </div>
+                            </div>
+
+                            <div>
+                                <span class="qualification__rounder"></span>
+                                <span class="qualification__line"></span>
+                            </div>
+                        </div>
+
+                        <!-- Qualification 2 -->
+                        <div class="qualification__data">
+                            <div></div>
+
+                            <div>
+                                <span class="qualification__rounder"></span>
+                                <span class="qualification__line"></span>
+                            </div>
+
+                            <div>
+                                <h3 class="qualification__title">HSC</h3>
+                                <span class="qualification__subtitle">Government Higher Secondary School</span>
+                                <div class="qualification__calendar">
+                                    <i class='bx bx-calendar'></i>
+                                    2020 - 2022
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Qualification 3 -->
+                        <div class="qualification__data">
+                            <div>
+                                <h3 class="qualification__title">SSLC</h3>
+                                <span class="qualification__subtitle">Government Higher Secondary School</span>
+                                <div class="qualification__calendar">
+                                    <i class='bx bx-calendar'></i>
+                                    2019 - 2020
+                                </div>
+                            </div>
+
+                            <div>
+                                <span class="qualification__rounder"></span>
+                                <!-- No line for the last item -->
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Work Qualification -->
+                    <div class="qualification__content" data-content id="work">
+                        <!-- Qualification 1 -->
+                        <div class="qualification__data">
+                            <div>
+                                <h3 class="qualification__title">Data Analyst Intern</h3>
+                                <span class="qualification__subtitle">Company Name</span>
+                                <div class="qualification__calendar">
+                                    <i class='bx bx-calendar'></i>
+                                    2024 - Present
+                                </div>
+                            </div>
+
+                            <div>
+                                <span class="qualification__rounder"></span>
+                                <span class="qualification__line"></span>
+                            </div>
+                        </div>
+
+                        <!-- Qualification 2 -->
+                        <div class="qualification__data">
+                            <div></div>
+
+                            <div>
+                                <span class="qualification__rounder"></span>
+                                <!-- No line for the last item -->
+                            </div>
+
+                            <div>
+                                <h3 class="qualification__title">Web Developer Intern</h3>
+                                <span class="qualification__subtitle">Company Name</span>
+                                <div class="qualification__calendar">
+                                    <i class='bx bx-calendar'></i>
+                                    2023 - 2024
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <style>/*=============== QUALIFICATION ===============*/
+.qualification__container {
+  max-width: 768px;
+}
+
+.qualification__tabs {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
+
+.qualification__button {
+  font-size: var(--h3-font-size);
+  font-weight: var(--font-medium);
+  color: var(--title-color);
+  margin: 0 1rem;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.qualification__button:hover {
+  color: var(--first-color);
+}
+
+.qualification__icon {
+  font-size: 1.8rem;
+  margin-right: 0.25rem;
+}
+
+.qualification__active {
+  color: var(--first-color);
+}
+
+.qualification__sections {
+  display: grid;
+  grid-template-columns: 0.5fr;
+  justify-content: center;
+}
+
+.qualification__content {
+  display: none;
+}
+
+.qualification__content-active {
+  display: block;
+}
+
+.qualification__data {
+  display: grid;
+  grid-template-columns: 1fr max-content 1fr;
+  column-gap: 1.5rem;
+}
+
+.qualification__title {
+  font-size: var(--normal-font-size);
+  font-weight: var(--font-medium);
+}
+
+.qualification__subtitle {
+  display: inline-block;
+  font-size: var(--small-font-size);
+  margin-bottom: 1rem;
+}
+
+.qualification__calendar {
+  font-size: var(--smaller-font-size);
+  color: var(--text-color-light);
+  display: flex;
+  align-items: center;
+}
+
+.qualification__calendar i {
+  margin-right: 0.25rem;
+}
+
+.qualification__rounder {
+  display: inline-block;
+  width: 13px;
+  height: 13px;
+  background-color: var(--first-color);
+  border-radius: 50%;
+}
+
+.qualification__line {
+  display: block;
+  width: 1px;
+  height: 100%;
+  background-color: var(--first-color);
+  transform: translate(6px, -7px);
+}
+
+/*=============== BREAKPOINTS ===============*/
+/* For medium devices */
+@media screen and (max-width: 576px) {
+  .qualification__sections {
+    grid-template-columns: initial;
+  }
+
+  .qualification__button {
+    margin: 0 0.75rem;
+  }
+}
+
+@media screen and (min-width: 576px) {
+  .qualification__sections {
+    grid-template-columns: 0.8fr;
+  }
+}
+
+/* For large devices */
+@media screen and (min-width: 992px) {
+  .qualification__container {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .qualification__sections {
+    grid-template-columns: 0.8fr;
+  }
+}</style>
+
+<script>/*=============== QUALIFICATION TABS ===============*/
+const tabs = document.querySelectorAll('[data-target]'),
+  tabContents = document.querySelectorAll('[data-content]');
+
+tabs.forEach(tab => {
+  tab.addEventListener('click', () => {
+    const target = document.querySelector(tab.dataset.target);
+    
+    tabContents.forEach(tabContent => {
+      tabContent.classList.remove('qualification__content-active');
+    });
+    
+    target.classList.add('qualification__content-active');
+    
+    tabs.forEach(tab => {
+      tab.classList.remove('qualification__active');
+    });
+    
+    tab.classList.add('qualification__active');
+  });
+});</script>
 
         <!--=============== SERVICES ===============-->
         <section class="services section">
