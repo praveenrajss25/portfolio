@@ -30,10 +30,80 @@
 </head>
 
 <body>
-    <!--=============== HEADER ===============-->
+    <!--=============== HEADER ===========is neccry for nav bar operate====-->
     <header class="header" id="header">
         <nav class="nav container">
-            <a href="#" class="nav__logo">praveen raj</a>
+            <a href="#" class="nav__logo">praveen raj SS
+                <!--=============== HEADER ===============-->
+<header class="header" id="header">
+  <nav class="nav container">
+    <!-- your logo / name -->
+    <a href="#" class="nav__logo">praveen raj SS</a>
+
+    <!-- scrolling quotes ticker (independent) -->
+    <div class="a">
+      <div class="b" id="f"></div>
+    </div>
+  </nav>
+</header>
+
+<style>
+/* ticker wrapper */
+.a {
+  overflow: hidden;
+  flex: 1;
+  margin-left: 15px;  /* spacing after name */
+}
+
+/* scrolling text */
+.b {
+  display: inline-block;
+  font-size: 16px;
+  font-weight: 600;
+  white-space: nowrap;
+  animation: moveRight 15s linear infinite;
+}
+
+/* left → right movement */
+@keyframes moveRight {
+  0%   { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+</style>
+
+<script>
+const quotes = [
+"“Don't Afraid to words just Analyse it.” —praveen raj",
+  "“Believe you can and you're halfway there.” — Theodore Roosevelt",
+  "“Act as if what you do makes a difference. It does.” — William James",
+  "“Don’t watch the clock; do what it does. Keep going.” — Sam Levenson",
+  "“Success is not final, failure is not fatal: It is the courage to continue that counts.” — Winston Churchill",
+  "“It always seems impossible until it’s done.” — Nelson Mandela",
+  "“Hardships often prepare ordinary people for an extraordinary destiny.” — C.S. Lewis",
+  "“Your limitation—it’s only your imagination.” — Unknown",
+  "“Push yourself, because no one else is going to do it for you.” — Unknown",
+  "“Great things never come from comfort zones.” — Unknown",
+  "“Dream it. Wish it. Do it.” — Unknown"
+];
+
+const colors = [
+  "#e91e63", "#ff5722", "#ffc107", "#4caf50", "#00bcd4",
+  "#2196f3", "#9c27b0", "#ff9800", "#3f51b5", "#009688"
+];
+
+let index = 0;
+const box = document.getElementById('f');
+
+function showQuote() {
+  box.textContent = quotes[index];
+  box.style.color = colors[index % colors.length];
+  index = (index + 1) % quotes.length;
+}
+
+showQuote();              // first quote
+setInterval(showQuote, 15000); // update every 15s
+</script>
+</a>
 
 
   </body>
