@@ -147,7 +147,21 @@ body{top:0!important}
 
 <!-- IMPORTANT: use https explicitly (protocol-relative can fail locally/https) -->
 <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+<style>/* Force black background and white text for Translate Dropdown */
+.nav__translate-menu {
+  background: #000 !important;   /* Always black */
+  color: #fff !important;        /* Default text color */
+}
 
+.nav__translate-menu li a {
+  color: #fff !important;        /* White letters */
+}
+
+.nav__translate-menu li a:hover {
+  background: var(--first-color) !important; /* Keep hover color */
+  color: #fff !important;
+}
+</style>
 
     <!-- scrolling quotes ticker (independent) -->
     <div class="a">
@@ -157,6 +171,8 @@ body{top:0!important}
 </header>
 
 <style>
+
+  
 /* ticker wrapper */
 .a {
   overflow: hidden;
