@@ -30,124 +30,50 @@
 </head>
 
 <body>
-    <!--=============== HEADER ===========is neccry for nav bar operate====-->
-    <header class="header" id="header">
-        <nav class="nav container">
-            <a href="#" class="nav__logo">praveen raj SS
+    
+         
                 <!--=============== HEADER ===============-->
 <header class="header" id="header">
   <nav class="nav container">
     <!-- your logo / name -->
     
-<a href="#" class="nav__logo">praveen raj</a>
+<a href="#" class="nav__logo">praveen raj__ </a>
 
-<!-- Translate Dropdown -->
-<div class="nav__translate">
-  <button class="nav__translate-btn">🌐</button>
-  <ul class="nav__translate-menu">
-    <li><a href="#" onclick="changeLang('en')">English</a></li>
-    <li><a href="#" onclick="changeLang('ta')">தமிழ்</a></li>
-    <li><a href="#" onclick="changeLang('hi')">हिन्दी</a></li>
-    <li><a href="#" onclick="changeLang('ml')">മലയാളം</a></li>
-  </ul>
+<!-- 🌍 Language Selector in Header -->
+<div class="navbar-actions">
+  <select id="langSelect" onchange="translateLanguage(this.value)">
+    <option value="en">English</option>
+    <option value="hi">हिन्दी</option>
+    <option value="ta">தமிழ்</option>
+    
+  </select>
 </div>
 
-<style>
-.nav__translate{position:relative;display:inline-block;margin-left:1rem}
-.nav__translate-btn{background:none;border:none;font-size:1rem;font-weight:500;color:var(--title-color);cursor:pointer;transition:.3s}
-.nav__translate-btn:hover{color:var(--first-color)}
-.nav__translate-menu{display:none;position:absolute;top:100%;left:0;background:#fff;border-radius:8px;box-shadow:0 4px 8px rgba(0,0,0,.1);list-style:none;padding:.5rem 0;margin:0;z-index:1000}
-.nav__translate-menu li a{display:block;padding:.5rem 1rem;color:var(--title-color);text-decoration:none}
-.nav__translate-menu li a:hover{background:var(--first-color);color:#fff}
-.nav__translate:hover .nav__translate-menu{display:block}
-
-/* Hide Google Translate UI */
-.goog-te-banner-frame.skiptranslate,
-#goog-gt-tt,
-.goog-te-balloon-frame,
-.goog-te-gadget-icon{display:none!important}
-body{top:0!important}
-</style>
-
-<!-- Google Translate (hidden container) -->
+<!-- Google Translate (hidden div, required) -->
 <div id="google_translate_element" style="display:none;"></div>
 
-<script>
-  // --- Remember last language ---
-  const STORAGE_KEY = 'site_lang';
-
-  // Init Google widget (kept hidden)
+<script type="text/javascript">
   function googleTranslateElementInit() {
     new google.translate.TranslateElement({
       pageLanguage: 'en',
-      includedLanguages: 'en,ta,hi,ml',
+      includedLanguages: 'en,hi,ta',
       autoDisplay: false
     }, 'google_translate_element');
-
-    // Re-apply saved language after widget loads
-    const saved = localStorage.getItem(STORAGE_KEY);
-    if (saved) applyLang(saved, false);
   }
 
-  // Public handler for menu clicks
-  function changeLang(lang) {
-    localStorage.setItem(STORAGE_KEY, lang);
-    applyLang(lang, true);
-  }
-
-  // Robust language apply: set cookies + gentle reload
-  function applyLang(lang, shouldReload) {
-    const pair = '/auto/' + lang; // keep source auto-detected
-    setGTCookie('googtrans', pair);
-    try { sessionStorage.setItem('googtrans', pair); } catch(e) {}
-
-    // Fallback: if the Google menu is present, try clicking inside it
-    try {
-      const frame = document.querySelector('iframe.goog-te-menu-frame');
-      if (frame && frame.contentWindow) {
-        const doc = frame.contentWindow.document;
-        const links = doc.querySelectorAll('a.goog-te-menu2-item, .goog-te-menu2-item div.text');
-        for (let i = 0; i < links.length; i++) {
-          const a = links[i];
-          if ((a.href && a.href.indexOf('#' + lang) !== -1) || (a.textContent || '').toLowerCase().includes(lang)) {
-            a.click();
-            shouldReload = false; // already applied
-            break;
-          }
-        }
-      }
-    } catch(e) {}
-
-    if (shouldReload) {
-      // small delay so cookie is set before reload
-      setTimeout(function(){ location.reload(); }, 120);
-    }
-  }
-
-  // Set googtrans cookie for current domain and root domain
-  function setGTCookie(name, value) {
-    const expire = 'expires=Thu, 31 Dec 2099 23:59:59 GMT';
-    const base = name + '=' + value + '; ' + expire + '; path=/';
-    const host = location.hostname;
-
-    // current host
-    document.cookie = base;
-    document.cookie = base + '; domain=' + host;
-
-    // root domain (adds leading dot if possible)
-    if (host.indexOf('.') > -1) {
-      const parts = host.split('.');
-      if (parts.length >= 2) {
-        const root = '.' + parts.slice(-2).join('.');
-        document.cookie = base + '; domain=' + root;
-      }
+  function translateLanguage(lang) {
+    const selectField = document.querySelector("select.goog-te-combo");
+    if (selectField) {
+      selectField.value = lang;
+      selectField.dispatchEvent(new Event("change"));
     }
   }
 </script>
 
-<!-- IMPORTANT: use https explicitly (protocol-relative can fail locally/https)
-<script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
- -->
+<script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+<!--end of language model-->
+
+
 
 <style>/* Force black background and white text for Translate Dropdown */
 .nav__translate-menu {
