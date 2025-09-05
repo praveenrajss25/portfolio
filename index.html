@@ -39,6 +39,137 @@
     
 <a href="#" class="nav__logo">praveen raj S S</a>
 
+
+
+<!-- ================== NAVBAR  only for read website================== -->
+
+<nav class="navbar">
+  <ul class="nav__list">
+    
+   <li class="nav__item">
+  <a href="tel:+919361858386" class="nav__link">
+    <i class='bx bx-phone-call'></i>
+  </a>
+</li>
+
+
+    <!-- 🔊 Voice Icon -->
+    <li class="nav__item voice-toggle">
+      <i class="bx bx-microphone" id="voiceIcon"></i>
+      <div class="voice-options" id="voiceOptions">
+        <button onclick="speakWebsite('male')">Male Voice</button>
+        <button onclick="speakWebsite('female')">Female Voice</button>
+        <button onclick="toggleMute()" id="muteBtn">Mute 🔇</button>
+      </div>
+    </li>
+  </ul>
+</nav>
+
+
+<!-- ================== STYLES ================== -->
+<style>
+.voice-toggle {
+  position: relative;
+}
+.voice-options {
+  display: none;
+  position: absolute;
+  top: 30px;
+  right: 0;
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+  padding: 6px;
+  z-index: 100;
+}
+.voice-options button {
+  display: block;
+  width: 100%;
+  border: none;
+  background: none;
+  padding: 6px 12px;
+  cursor: pointer;
+  font-size: 14px;
+}
+.voice-options button:hover {
+  background: #f0f0f0;
+}
+
+
+
+</style>
+
+<!-- ================== SCRIPT ================== -->
+<script>
+const voiceIcon = document.getElementById("voiceIcon");
+const voiceOptions = document.getElementById("voiceOptions");
+const voiceIndicator = document.getElementById("voiceIndicator");
+const muteBtn = document.getElementById("muteBtn");
+
+let currentUtterance = null;
+let isMuted = false;
+
+// Toggle dropdown
+voiceIcon.addEventListener("click", () => {
+  voiceOptions.style.display =
+    voiceOptions.style.display === "block" ? "none" : "block";
+});
+
+// Speak Website Content
+function speakWebsite(type) {
+  const text = document.body.innerText;
+  const utterance = new SpeechSynthesisUtterance(text);
+
+  const voices = speechSynthesis.getVoices();
+  if (type === "male") {
+    utterance.voice = voices.find(v => v.name.toLowerCase().includes("male")) || voices[0];
+  } else {
+    utterance.voice = voices.find(v => v.name.toLowerCase().includes("female")) || voices[1];
+  }
+
+  speechSynthesis.cancel(); // stop any current speech
+  currentUtterance = utterance;
+
+  if (!isMuted) {
+    speechSynthesis.speak(utterance);
+  }
+
+  // Mic ON + show indicator
+  voiceIcon.className = "bx bx-microphone voice-on";
+  voiceIndicator.style.display = "block";
+
+  utterance.onend = () => {
+    voiceIndicator.style.display = "none";
+    voiceIcon.className = "bx bx-microphone"; // reset mic
+  };
+
+  voiceOptions.style.display = "none";
+}
+
+// Toggle mute/unmute
+function toggleMute() {
+  if (!isMuted) {
+    // Mute
+    speechSynthesis.pause();
+    isMuted = true;
+    muteBtn.textContent = "Unmute 🎤";
+    voiceIcon.className = "bx bx-microphone-off";
+    voiceIndicator.style.display = "none";
+  } else {
+    // Unmute
+    speechSynthesis.resume();
+    isMuted = false;
+    muteBtn.textContent = "Mute 🔇";
+    voiceIcon.className = "bx bx-microphone";
+    voiceIndicator.style.display = "block";
+  }
+}
+</script>
+
+
+<!--==========================languages=================-->
+
 <!-- 🌍 Language Selector in Header -->
 <div class="navbar-actions">
   <select id="langSelect" onchange="translateLanguage(this.value)">
