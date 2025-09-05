@@ -1031,8 +1031,7 @@
         </section>
 
 
-
-        <!-- =================== LIvE VIDEO SECTION =================== -->
+<!-- =================== LIvE VIDEO SECTION =================== -->
 <section class="like-video section" id="like-video">
   <div class="like-video__container container">
     <h2 class="section__title">Watch My Work in Action</h2>
@@ -1050,7 +1049,7 @@
             </video>
             <button class="mute-btn">🔇</button>
           </div>
-          <p class="video-caption">🚀 Project 1: My speech in teachers day</p>
+          <p class="video-caption">🚀 Project 1: My Data Analytics Demo</p>
         </div>
 
         <!-- 🔹 Slide 2 -->
@@ -1061,7 +1060,7 @@
             </video>
             <button class="mute-btn">🔇</button>
           </div>
-          <p class="video-caption"><!--if u need just add--></p>
+          <p class="video-caption">💻 Project 2: Full Stack Development</p>
         </div>
 
         <!-- 🔹 Slide 3 
@@ -1077,10 +1076,8 @@
 
       </div>
 
-      <!-- Swiper Navigation -->
+      <!-- ✅ Only pagination dots remain -->
       <div class="swiper-pagination"></div>
-      <div class="swiper-button-prev"></div>
-      <div class="swiper-button-next"></div>
     </div>
   </div>
 </section>
@@ -1150,11 +1147,6 @@
   padding: 2rem 0;
 }
 
-.swiper-button-prev,
-.swiper-button-next {
-  color: #333;
-}
-
 .swiper-pagination-bullet-active {
   background: #333;
 }
@@ -1175,7 +1167,7 @@
 <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
 <script>
-  // Init Swiper
+  // Init Swiper (✅ only dots, no arrows)
   const swiper = new Swiper(".like-video-swiper", {
     loop: true,
     spaceBetween: 30,
@@ -1183,11 +1175,7 @@
     pagination: {
       el: ".swiper-pagination",
       clickable: true,
-    },
-    navigation: {
-      nextEl: ".swiper-button-next",
-      prevEl: ".swiper-button-prev",
-    },
+    }
   });
 
   // Mute/Unmute buttons
@@ -1199,7 +1187,6 @@
     });
   });
 </script>
-
 
 <!--=========================end of live video section=============-->
 
