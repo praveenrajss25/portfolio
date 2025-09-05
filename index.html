@@ -1031,7 +1031,9 @@
         </section>
 
 
-<!-- =================== LIvE VIDEO SECTION =================== -->
+
+
+<!-- =================== LIKE VIDEO SECTION =================== -->
 <section class="like-video section" id="like-video">
   <div class="like-video__container container">
     <h2 class="section__title">Watch My Work in Action</h2>
@@ -1043,19 +1045,19 @@
         <!-- 🔹 Slide 1 -->
         <div class="swiper-slide">
           <div class="like-video__wrapper">
-            <video class="like-video__player" autoplay loop muted playsinline>
+            <video class="like-video__player" muted playsinline>
               <source src="assets/videos/praveenraj 2.mp4" type="video/mp4">
               Your browser does not support the video tag.
             </video>
             <button class="mute-btn">🔇</button>
           </div>
-          <p class="video-caption">🚀 Project 1: My Data Analytics Demo</p>
+          <p class="video-caption">Teachers day speech</p>
         </div>
 
         <!-- 🔹 Slide 2 -->
         <div class="swiper-slide">
           <div class="like-video__wrapper">
-            <video class="like-video__player" autoplay loop muted playsinline>
+            <video class="like-video__player" muted playsinline>
               <source src="assets/videos/praveenraj.mp4" type="video/mp4">
             </video>
             <button class="mute-btn">🔇</button>
@@ -1063,20 +1065,20 @@
           <p class="video-caption">💻 Project 2: Full Stack Development</p>
         </div>
 
-        <!-- 🔹 Slide 3 
+        <!-- 🔹 Slide 3 -->
         <div class="swiper-slide">
           <div class="like-video__wrapper">
-            <video class="like-video__player" autoplay loop muted playsinline>
+            <video class="like-video__player" muted playsinline>
               <source src="assets/videos/project3.mp4" type="video/mp4">
             </video>
             <button class="mute-btn">🔇</button>
           </div>
           <p class="video-caption">📊 Project 3: Dashboard Showcase</p>
-        </div>-->
+        </div>
 
       </div>
 
-      <!-- ✅ Only pagination dots remain -->
+      <!-- ✅ Only pagination dots -->
       <div class="swiper-pagination"></div>
     </div>
   </div>
@@ -1132,10 +1134,10 @@
   background: rgba(0,0,0,0.8);
 }
 
-/* Caption below video */
+/* Caption below video (⬇️ pushed down below dots) */
 .video-caption {
-  margin-top: 0.8rem;
-  font-size: 1rem;
+  margin-top:0.8rem; /* more space between dots and caption */
+  font-size: 2.3rem;/*original ::: 1rem*/
   color: #444;
   font-weight: 500;
   text-align: center;
@@ -1145,6 +1147,11 @@
 .swiper {
   width: 100%;
   padding: 2rem 0;
+}
+
+.swiper-pagination {
+  margin-top: 1rem;
+  position: relative;
 }
 
 .swiper-pagination-bullet-active {
@@ -1170,11 +1177,29 @@
   // Init Swiper (✅ only dots, no arrows)
   const swiper = new Swiper(".like-video-swiper", {
     loop: true,
-    spaceBetween: 30,
+    spaceBetween: 20,
     centeredSlides: true,
     pagination: {
       el: ".swiper-pagination",
       clickable: true,
+    },
+    on: {
+      init: function () {
+        // Autoplay first video on load
+        const firstVideo = this.slides[this.activeIndex].querySelector("video");
+        if (firstVideo) firstVideo.play();
+      },
+      slideChange: function () {
+        // Pause all videos
+        document.querySelectorAll(".like-video__player").forEach((vid) => {
+          vid.pause();
+        });
+
+        // Play current active video
+        const activeSlide = this.slides[this.activeIndex];
+        const activeVideo = activeSlide.querySelector("video");
+        if (activeVideo) activeVideo.play();
+      }
     }
   });
 
@@ -1187,11 +1212,6 @@
     });
   });
 </script>
-
-<!--=========================end of live video section=============-->
-
-
-
 
 
         <!--=============== TESTIMONIALS ===============-->
