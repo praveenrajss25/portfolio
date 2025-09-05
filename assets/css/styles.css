@@ -335,8 +335,8 @@ body.light-theme {
 
 .home__handle {
   justify-self: center;
-  width: 500px;           /*190px*/
-  height:500px;          /*293px*/
+  width: 190px;           /**/
+  height: 293px;          /**/
   /*background: linear-gradient(
     180deg,
     hsla(var(--first-hue), var(--sat), var(--lig), 0.5),
