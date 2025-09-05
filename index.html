@@ -43,8 +43,9 @@
 <div class="navbar-actions">
   <select id="langSelect" onchange="translateLanguage(this.value)">
     <option value="en">English</option>
-    <option value="hi">हिन्दी</option>
     <option value="ta">தமிழ்</option>
+    <option value="hi">हिन्दी</option>
+    
     
   </select>
 </div>
@@ -56,7 +57,7 @@
   function googleTranslateElementInit() {
     new google.translate.TranslateElement({
       pageLanguage: 'en',
-      includedLanguages: 'en,hi,ta',
+      includedLanguages: 'en,ta,hi',
       autoDisplay: false
     }, 'google_translate_element');
   }
@@ -74,7 +75,7 @@
 <!--end of language model-->
 
 
-
+<!--nave bar -->
             <div class="nav__menu">
                 <ul class="nav__list">
                     <li class="nav__item ">
