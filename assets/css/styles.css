@@ -326,17 +326,17 @@ body.light-theme {
 .home__name {
   font-size: var(--biggest-font-size);
   color:red;
-  /*color: var(--first-color);*/
+  /*color: var(--first-color);     this is violet color*/
 }
 
 .home__img {
-  width: 160px;
+  width:1000px; /*original*/
 }
 
 .home__handle {
   justify-self: center;
-  width: 190px;
-  height: 293px;
+  width: 500px;           /*190px*/
+  height:500px;          /*293px*/
   /*background: linear-gradient(
     180deg,
     hsla(var(--first-hue), var(--sat), var(--lig), 0.5),
