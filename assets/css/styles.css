@@ -325,22 +325,21 @@ body.light-theme {
 
 .home__name {
   font-size: var(--biggest-font-size);
-  color:red;
-  /*color: var(--first-color);     this is violet color*/
+  color: var(--first-color);
 }
 
 .home__img {
-  width: 160px; /*original*/
+  width: 160px;
 }
 
 .home__handle {
   justify-self: center;
-  width: 190px;           /**/
-  height: 293px;          /**/
-  /*background: linear-gradient(
+  width: 190px;
+  height: 293px;
+  background: linear-gradient(
     180deg,
     hsla(var(--first-hue), var(--sat), var(--lig), 0.5),
-    hsla(var(--first-hue), var(--sat), var(--lig), 0.1)*/
+    hsla(var(--first-hue), var(--sat), var(--lig), 0.1)
   );
 
   border-radius: 10rem 10rem 1rem 1rem;
@@ -1056,7 +1055,7 @@ body.light-theme {
   .contact__form {
     width: 340px;
   }
-   .contact__info {
+  /* .contact__info {
     grid-template-columns: 350px;
     justify-content: center;
   }
@@ -1067,12 +1066,12 @@ body.light-theme {
   } */
 }
 
- @media screen and (min-width: 767px) {
-   .work__container {
+/* @media screen and (min-width: 767px) {
+  /* .work__container {
     grid-template-columns: repeat(2, max-content);
-  } 
+  } */
 
- .contact__info {
+/* .contact__info {
     grid-template-columns: 300px;
   }
 
@@ -1080,7 +1079,7 @@ body.light-theme {
     grid-template-columns: repeat(2, 325px);
     justify-content: center;
   }
-} 
+} */
 
 /* For large devices */
 @media screen and (min-width: 992px) {
