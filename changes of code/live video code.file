@@ -1,0 +1,180 @@
+
+<!-- =================== LIKE VIDEO SECTION =================== -->
+<section class="like-video section" id="like-video">
+  <div class="like-video__container container">
+    <h2 class="section__title">Watch My Work in Action</h2>
+
+    <!-- 🔹 Swiper Container -->
+    <div class="swiper like-video-swiper">
+      <div class="swiper-wrapper">
+
+        <!-- 🔹 Slide 1 -->
+        <div class="swiper-slide">
+          <div class="like-video__wrapper">
+            <video class="like-video__player" muted playsinline>
+              <source src="assets/videos/praveenraj 2.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+            <button class="mute-btn">🔇</button>
+          </div>
+          <p class="video-caption">Teachers day speech</p>
+        </div>
+
+        <!-- 🔹 Slide 2 -->
+        <div class="swiper-slide">
+          <div class="like-video__wrapper">
+            <video class="like-video__player" muted playsinline>
+              <source src="assets/videos/praveenraj.mp4" type="video/mp4">
+            </video>
+            <button class="mute-btn">🔇</button>
+          </div>
+          <p class="video-caption">💻 Project 2: Full Stack Development</p>
+        </div>
+
+        <!-- 🔹 Slide 3 not use 
+        <div class="swiper-slide">
+          <div class="like-video__wrapper">
+            <video class="like-video__player" muted playsinline>
+              <source src="assets/videos/project3.mp4" type="video/mp4">
+            </video>
+            <button class="mute-btn">🔇</button>
+          </div>
+          <p class="video-caption">📊 Project 3: Dashboard Showcase</p>
+        </div>-->
+
+      </div>
+
+      <!-- ✅ Only pagination dots -->
+      <div class="swiper-pagination"></div>
+    </div>
+  </div>
+</section>
+
+<!-- =================== CSS =================== -->
+<style>
+.like-video {
+  padding: 4rem 1rem;
+  text-align: center;
+}
+
+.like-video__container {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.like-video__wrapper {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  max-width: 800px;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.2);
+}
+
+/* Video style */
+.like-video__player {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+  border-radius: 16px;
+}
+
+/* Mute/Unmute button */
+.mute-btn {
+  position: absolute;
+  bottom: 15px;
+  right: 15px;
+  background: rgba(0,0,0,0.6);
+  border: none;
+  color: white;
+  font-size: 1.5rem;
+  border-radius: 50%;
+  padding: 10px 14px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.mute-btn:hover {
+  background: rgba(0,0,0,0.8);
+}
+
+/* Caption below video (⬇️ pushed down below dots) */
+.video-caption {
+  margin-top:0.8rem; /* more space between dots and caption */
+  font-size: 1rem;/*original ::: 1rem*/
+  color: var(--first-color)/*original #444*/;
+  font-weight: 500;
+  text-align: center;
+}
+
+/* Swiper customization */
+.swiper {
+  width: 100%;
+  padding: 2rem 0;
+}
+
+.swiper-pagination {
+  margin-top: 1rem;
+  position: relative;
+}
+
+.swiper-pagination-bullet-active {
+  background: #333;
+}
+
+/* Responsive layout */
+@media (max-width: 768px) {
+  .like-video__wrapper {
+    max-width: 100%;
+    border-radius: 12px;
+  }
+}
+</style>
+
+<!-- =================== JS =================== -->
+
+<!-- SwiperJS CDN -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+<script>
+  // Init Swiper (✅ only dots, no arrows)
+  const swiper = new Swiper(".like-video-swiper", {
+    loop: true,
+    spaceBetween: 20,
+    centeredSlides: true,
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true,
+    },
+    on: {
+      init: function () {
+        // Autoplay first video on load
+        const firstVideo = this.slides[this.activeIndex].querySelector("video");
+        if (firstVideo) firstVideo.play();
+      },
+      slideChange: function () {
+        // Pause all videos
+        document.querySelectorAll(".like-video__player").forEach((vid) => {
+          vid.pause();
+        });
+
+        // Play current active video
+        const activeSlide = this.slides[this.activeIndex];
+        const activeVideo = activeSlide.querySelector("video");
+        if (activeVideo) activeVideo.play();
+      }
+    }
+  });
+
+  // Mute/Unmute buttons
+  document.querySelectorAll(".mute-btn").forEach((btn) => {
+    const vid = btn.previousElementSibling;
+    btn.addEventListener("click", () => {
+      vid.muted = !vid.muted;
+      btn.textContent = vid.muted ? "🔇" : "🔊";
+    });
+  });
+</script>

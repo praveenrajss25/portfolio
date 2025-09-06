@@ -1161,9 +1161,6 @@ function toggleMute() {
             </div><!--root key word-->
         </section>
 
-
-
-
 <!-- =================== LIKE VIDEO SECTION =================== -->
 <section class="like-video section" id="like-video">
   <div class="like-video__container container">
@@ -1196,21 +1193,13 @@ function toggleMute() {
           <p class="video-caption">💻 Project 2: Full Stack Development</p>
         </div>
 
-        <!-- 🔹 Slide 3 not use 
-        <div class="swiper-slide">
-          <div class="like-video__wrapper">
-            <video class="like-video__player" muted playsinline>
-              <source src="assets/videos/project3.mp4" type="video/mp4">
-            </video>
-            <button class="mute-btn">🔇</button>
-          </div>
-          <p class="video-caption">📊 Project 3: Dashboard Showcase</p>
-        </div>-->
-
       </div>
 
       <!-- ✅ Only pagination dots -->
       <div class="swiper-pagination"></div>
+
+      <!-- ✅ Small NEXT Text -->
+      <p class="next-text">&lt;&gt; next &lt;&gt;</p>
     </div>
   </div>
 </section>
@@ -1265,11 +1254,11 @@ function toggleMute() {
   background: rgba(0,0,0,0.8);
 }
 
-/* Caption below video (⬇️ pushed down below dots) */
+/* Caption below video */
 .video-caption {
-  margin-top:0.8rem; /* more space between dots and caption */
-  font-size: 1rem;/*original ::: 1rem*/
-  color: var(--first-color)/*original #444*/;
+  margin-top:0.8rem;
+  font-size: 1rem;
+  color: var(--first-color);
   font-weight: 500;
   text-align: center;
 }
@@ -1289,11 +1278,26 @@ function toggleMute() {
   background: #333;
 }
 
+/* ✅ Small NEXT text */
+.next-text {
+  margin-top: 0.5rem;
+  font-size: 0.75rem; /* very small */
+  color: #fff;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-align: center;
+  opacity: 0.8;
+  font-style: italic;
+}
+
 /* Responsive layout */
 @media (max-width: 768px) {
   .like-video__wrapper {
     max-width: 100%;
     border-radius: 12px;
+  }
+  .next-text {
+    font-size: 0.65rem; /* smaller on mobile */
   }
 }
 </style>
@@ -1305,7 +1309,7 @@ function toggleMute() {
 <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
 <script>
-  // Init Swiper (✅ only dots, no arrows)
+  // Init Swiper
   const swiper = new Swiper(".like-video-swiper", {
     loop: true,
     spaceBetween: 20,
@@ -1316,9 +1320,12 @@ function toggleMute() {
     },
     on: {
       init: function () {
-        // Autoplay first video on load
+        // Autoplay first video muted
         const firstVideo = this.slides[this.activeIndex].querySelector("video");
-        if (firstVideo) firstVideo.play();
+        if (firstVideo) {
+          firstVideo.muted = true;   // ✅ ensure muted
+          firstVideo.play().catch(err => console.log("Autoplay blocked:", err));
+        }
       },
       slideChange: function () {
         // Pause all videos
@@ -1326,23 +1333,32 @@ function toggleMute() {
           vid.pause();
         });
 
-        // Play current active video
+        // Play only current active video
         const activeSlide = this.slides[this.activeIndex];
         const activeVideo = activeSlide.querySelector("video");
-        if (activeVideo) activeVideo.play();
+        if (activeVideo) {
+          activeVideo.muted = true;  // ✅ autoplay works only muted
+          activeVideo.play().catch(err => console.log("Autoplay blocked:", err));
+        }
       }
     }
   });
 
-  // Mute/Unmute buttons
+  // Mute/Unmute toggle
   document.querySelectorAll(".mute-btn").forEach((btn) => {
     const vid = btn.previousElementSibling;
     btn.addEventListener("click", () => {
       vid.muted = !vid.muted;
       btn.textContent = vid.muted ? "🔇" : "🔊";
+
+      // If unmuted, restart playback to ensure sound works
+      vid.play().catch(err => console.log("Play blocked:", err));
     });
   });
 </script>
+
+
+
 
 
         <!--=============== TESTIMONIALS ===============-->
