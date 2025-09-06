@@ -1056,7 +1056,7 @@ body.light-theme {
   .contact__form {
     width: 340px;
   }
-  /* .contact__info {
+   .contact__info {
     grid-template-columns: 350px;
     justify-content: center;
   }
@@ -1067,12 +1067,12 @@ body.light-theme {
   } */
 }
 
-/* @media screen and (min-width: 767px) {
-  /* .work__container {
+ @media screen and (min-width: 767px) {
+   .work__container {
     grid-template-columns: repeat(2, max-content);
-  } */
+  } 
 
-/* .contact__info {
+ .contact__info {
     grid-template-columns: 300px;
   }
 
@@ -1080,7 +1080,7 @@ body.light-theme {
     grid-template-columns: repeat(2, 325px);
     justify-content: center;
   }
-} */
+} 
 
 /* For large devices */
 @media screen and (min-width: 992px) {
