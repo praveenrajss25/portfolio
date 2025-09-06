@@ -325,7 +325,7 @@ body.light-theme {
 
 .home__name {
   font-size: var(--biggest-font-size);
-  color:red;
+  color: red;
   /*color: var(--first-color);     this is violet color*/
 }
 
