@@ -1173,7 +1173,7 @@ function toggleMute() {
         <!-- 🔹 Slide 1 -->
         <div class="swiper-slide">
           <div class="like-video__wrapper">
-            <video class="like-video__player" muted playsinline>
+            <video class="like-video__player" playsinline>
               <source src="assets/videos/praveenraj 2.mp4" type="video/mp4">
               Your browser does not support the video tag.
             </video>
@@ -1185,12 +1185,12 @@ function toggleMute() {
         <!-- 🔹 Slide 2 -->
         <div class="swiper-slide">
           <div class="like-video__wrapper">
-            <video class="like-video__player" muted playsinline>
+            <video class="like-video__player" playsinline>
               <source src="assets/videos/praveenraj.mp4" type="video/mp4">
             </video>
             <button class="mute-btn">🔇</button>
           </div>
-          <p class="video-caption">💻 Project 2: Full Stack Development</p>
+          <p class="video-caption">welcome address</p>
         </div>
 
       </div>
@@ -1309,6 +1309,9 @@ function toggleMute() {
 <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
 <script>
+  // Global mute state (default = true so autoplay works)
+  let globalMuted = true;
+
   // Init Swiper
   const swiper = new Swiper(".like-video-swiper", {
     loop: true,
@@ -1320,12 +1323,15 @@ function toggleMute() {
     },
     on: {
       init: function () {
-        // Autoplay first video muted
+        // Autoplay first video
         const firstVideo = this.slides[this.activeIndex].querySelector("video");
         if (firstVideo) {
-          firstVideo.muted = true;   // ✅ ensure muted
+          firstVideo.muted = globalMuted;
           firstVideo.play().catch(err => console.log("Autoplay blocked:", err));
         }
+        // Set button icon for first slide
+        const firstBtn = this.slides[this.activeIndex].querySelector(".mute-btn");
+        if (firstBtn) firstBtn.textContent = globalMuted ? "🔇" : "🔊";
       },
       slideChange: function () {
         // Pause all videos
@@ -1333,12 +1339,18 @@ function toggleMute() {
           vid.pause();
         });
 
-        // Play only current active video
+        // Play current active video
         const activeSlide = this.slides[this.activeIndex];
         const activeVideo = activeSlide.querySelector("video");
         if (activeVideo) {
-          activeVideo.muted = true;  // ✅ autoplay works only muted
+          activeVideo.muted = globalMuted; // ✅ use global mute state
           activeVideo.play().catch(err => console.log("Autoplay blocked:", err));
+        }
+
+        // Update active slide button icon
+        const activeBtn = activeSlide.querySelector(".mute-btn");
+        if (activeBtn) {
+          activeBtn.textContent = globalMuted ? "🔇" : "🔊";
         }
       }
     }
@@ -1346,12 +1358,13 @@ function toggleMute() {
 
   // Mute/Unmute toggle
   document.querySelectorAll(".mute-btn").forEach((btn) => {
-    const vid = btn.previousElementSibling;
     btn.addEventListener("click", () => {
-      vid.muted = !vid.muted;
-      btn.textContent = vid.muted ? "🔇" : "🔊";
+      const vid = btn.previousElementSibling;
+      globalMuted = !globalMuted; // ✅ update global state
+      vid.muted = globalMuted;
+      btn.textContent = globalMuted ? "🔇" : "🔊";
 
-      // If unmuted, restart playback to ensure sound works
+      // Resume playback with new mute state
       vid.play().catch(err => console.log("Play blocked:", err));
     });
   });
