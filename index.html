@@ -16,6 +16,112 @@
     <meta name="msapplication-config" content="assets/favicons/browserconfig.xml">
     <meta name="theme-color" content="#a789d4">
 
+<!--===============================================================loader=================================================-->
+     <style>
+    /* ===== Preloader Fullscreen ===== */
+    #preloader {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      z-index: 9999;
+      transition: opacity 0.8s ease, visibility 0.8s ease;
+    }
+    #preloader.hidden {
+      opacity: 0;
+      visibility: hidden;
+    }
+
+    /* ===== Glowing Circle Animation ===== */
+    .circle {
+      width: 100px;
+      height: 100px;
+      border: 6px solid transparent;
+      border-top: 6px solid #00f2fe;
+      border-right: 6px solid #4facfe;
+      border-radius: 50%;
+      animation: spin 1.2s linear infinite;
+      filter: drop-shadow(0 0 12px #00f2fe);
+      margin-bottom: 20px;
+    }
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+
+    /* ===== Loading Text Shimmer ===== */
+    .loader {
+      font-family: "Poppins", sans-serif;
+      font-size: 28px;
+      font-weight: bold;
+      background: linear-gradient(90deg, #fff, #00f2fe, #4facfe, #fff);
+      background-size: 300% 100%;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: shimmer 2s infinite linear;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+    }
+    @keyframes shimmer {
+      0% { background-position: 0% 50%; }
+      100% { background-position: 100% 50%; }
+    }
+
+    /* ===== Website Content ===== */
+    .content {
+      display: none;
+      text-align: center;
+      padding: 40px;
+      font-family: Arial, sans-serif;
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 1s ease, transform 1s ease;
+    }
+    .content.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
+</head>
+<body>
+  
+  <!-- Loader -->
+  <div id="preloader">
+    <div class="circle"></div>
+    <div class="loader">Loading...</div>
+  </div>
+
+  <!-- Main Website 
+  <div class="content">
+    <h1>🚀 Welcome to My Website</h1>
+    <p>Loaded with a modern, attractive preloader ✨</p>
+  </div>
+-->
+
+  <script>
+    // Hide loader when page loads
+    window.addEventListener("load", function() {
+      const preloader = document.getElementById("preloader");
+      const content = document.querySelector(".content");
+
+      preloader.classList.add("hidden");
+
+      setTimeout(() => {
+        content.style.display = "block";
+        requestAnimationFrame(() => content.classList.add("show"));
+      }, 800);
+    });
+  </script>
+
+
+
+
     <!--=============== BOXICONS ===============-->
     <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
 
